@@ -1,0 +1,32 @@
+.timedit {
+  cursor: pointer;
+  width: 360px;
+}
+
+.timedit .unknown {
+  color: #888;
+}
+
+.timedit > label {
+  cursor: inherit;
+  display: inline-block;
+}
+
+.timedit > label > span > span {
+  display: inline-block;
+  width: 0.6em;
+}
+
+.timedit > .timeditinput {
+  display: inline-block;
+  color: inherit;
+  width: 5px;
+  font-size: inherit;
+  background: none;
+  border: none;
+}
+
+.timedit > .timeditinput:focus {
+  outline: none;
+  shadow: none;
+}

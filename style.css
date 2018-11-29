@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import '/time-edit.css';
+
+body {
+  background: #454545;
+  color: #ccc;
+  font-size: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#main {
+  max-width: 36em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: auto;
+  /* background-color: rgb(151, 89, 208) */
+}
+
+.invis {
+  opacity: 0;
+}
+
+
+#addTimer {
+  color: #454545;
+  flex: initial;
+  background-color: rgb(255, 190, 100);
+}
+
+#addTimer ::placeholder {
+  color: #888;
+}
+
+.timer-name input {
+  background: none;
+  text-align: center;
+  color: inherit;
+  width: auto;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.timer-name input:focus {
+  outline: none;
+}
+
+#time .input {
+  display: inline-block;
+  width: 0;
+}
+
+#timers {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.timer {
+  position: relative;
+  display: block;
+  transition: background 600ms ease-out;
+  /* background-color: rgb(140, 245, 255); */
+  /* height: 4em; */
+}
+
+.timer.new {
+  transition: background 0ms;
+  background: rgb(255, 190, 100);
+}
+
+.timer-high {
+  line-height: 1.4em;
+  text-align: center;
+}
+
+.timer-low {
+  /* height: 2em; */
+  line-height: 1.8em;
+  display: flex;
+}
+
+.timer-low div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.timer-low.div:first-child > span {
+  /* background: #00ff00; */
+  margin-right: auto;
+}
+
+.timer-low.div:last-child > span {
+  margin-left: auto;
+}
+
+.timer .timer-btn {
+  cursor: pointer;
+}
+
+.timer-name {
+  display: inline-block;
+  text-align: center;
+}
+
+.timer-bar {
+  position: relative;
+  height: 0.4em;
+
+  background-color: rgba(0,0,0,0.125);
+}
+
+.timer-progress {
+  width: 80%;
+  height: 100%;
+  background-color: rgb(255, 190, 100);
+}

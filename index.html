@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Timers</title>
+    <link href="./style.css" rel="stylesheet">
+    <script src="./script.js" type="module"></script>
+  </head>
+  <body>
+    <section id="main">
+      <!-- <div id="addTimer">
+        <label for="name">Name: </label>
+        <input type="text" id="name" placeholder="Purpose"/>
+        <input id="duration" type="range" value="0.05" max="1" min="0" step="0.01" />
+        <span><span id="durationOut">0</span> minutes</span>
+        <span class="timer-btn" id="newTimerBtn">+</span>
+      </div> -->
+
+      <section id="addTimer" class="timer">
+        <section class="timer-high">
+          <div class="timer-name timer-btn"><input type="text" placeholder="Name"/></div>
+        </section>
+        <section class="timer-low">
+          <div></div>
+          <!-- <div class="timer-left"><span class="" contenteditable="">00:00:00ms</span></div> -->
+          <div></div>
+          <div class="timer-duration"></div>
+          <div class="timer-add timer-btn"><span class="">+</span></div>
+          <div></div>
+        </section>
+      </section>
+
+      <section id="timers">
+        <section class="timer invis" data-id="1">
+          <section class="timer-high">
+            <div class="timer-name"><span>Name</span></div>
+          </section>
+          <section class="timer-low">
+            <div></div>
+            <div class="timer-remove timer-btn"><span>-</span></div>
+            <div class="timer-left"><span>00:00:00ms</span></div>
+            <div class="timer-toggle timer-btn"><span>Start</span></div>
+            <div class="timer-reset timer-btn"><span>Reset</span></div>
+          </section>
+          <div class="timer-bar">
+            <div class="timer-progress"></div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>
