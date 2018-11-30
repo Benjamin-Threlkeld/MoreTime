@@ -42,8 +42,10 @@ function listeners () {
         g.timeIn.nameIn.select()
       }, 10)
   })
-  g.timersE.addEventListener('click', onTimerDown, false)
-  g.timeIn.newBtn.addEventListener('click', onAddTimer, false)
+  g.timersE.addEventListener('touchend', onTimerDown, false)
+  g.timersE.addEventListener('mouseup', onTimerDown, false)
+  g.timeIn.newBtn.addEventListener('touchend', onAddTimer, false)
+  g.timeIn.newBtn.addEventListener('mouseup', onAddTimer, false)
 }
 
 // returns the timer object of the clicked element
@@ -69,7 +71,11 @@ function containingTimer (target) {
   }
 }
 
-function onTimerDown (e) {
+function onTimerDown (e={}) {
+  console.log('onTimerDown', e)
+  if (e.handled === true) return
+  e.handled = true
+  e.preventDefault()
   let route = [
     {name: '-toggle', func: (timer) => {
       timer.toggle()
@@ -89,7 +95,7 @@ function onTimerDown (e) {
   let classes = e.target.classList
   let parentClasses = e.target.parentElement.classList
   for (var i = route.length - 1; i > -1; i--) {
-    console.log(route[i].name)
+    // console.log(route[i].name)
     if (classes.contains(g.prefix + route[i].name) || parentClasses.contains(g.prefix + route[i].name)) {
       let timer = containingTimer(e.target)
       if (timer) {
@@ -110,7 +116,7 @@ function removeTimer (timer) {
 
 function newTimer (duration, name, flash=true) {
   if (!g.timers) g.timers = []
-  console.log('start input:', duration)
+  // console.log('start input:', duration)
   let timer = new Timer(~~duration, name)
   g.timers.push(timer)
 
@@ -156,7 +162,11 @@ function populateTimer(timer) {
   timer.eles.progress.style.width = 0 + '%'
 }
 
-function onAddTimer (e) {
+function onAddTimer (e={}) {
+  console.log('onAddTimer')
+  if (e.handled === true) return
+  e.handled = true
+  e.preventDefault()
   // get values
   let duration = g.timedit.ms
   let name = g.timeIn.nameIn.value
